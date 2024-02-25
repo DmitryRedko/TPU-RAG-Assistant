@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#chat-container {
+    display: flex;
+    justify-content: center; /* Центрирование рамки чата */
+}
+
+#chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 90%; /* Сужение рамки чата */
+}
+
+#message-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#message-input {
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+#message-input:focus {
+    outline: none;
+}
+
+#message-input::placeholder {
+    color: #999;
+}
+
+#message-input:focus::placeholder {
+    color: transparent;
+}
+
+#message-input[type="text"] {
+    width: calc(100% - 80px);
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin: 5px 0;
+}
+
+strong {
+    color: #007bff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px; /* Adding margin to all sides */
+}
+
+#chat-container {
+    display: flex;
+    justify-content: center; /* Centering chat box horizontally */
+}
+
+#chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    max-height: calc(100vh - 140px); /* Setting chat box height to fill the screen */
+    overflow-y: auto;
+    width: 90%; /* Limiting chat box width */
+}
+
+/* Adjustments to make chat box fill the screen vertically */
+html, body, #chat-container {
+    height: 100%;
+}
+
+/* Centering chat box vertically */
+#chat-container {
+    align-items: center;
+}
+
