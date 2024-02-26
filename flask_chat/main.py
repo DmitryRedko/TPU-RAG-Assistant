@@ -21,7 +21,7 @@ print("Инициализация топик-модели завершилась
 messages = []
 
 def process_message(message):
-    topic = topic_bot.get_topic(message).strip()
+    topic = topic_bot.get_topic(message).strip().replace("'", '').replace('Ответ: ', '').replace('"', '')
     print(topic)
     search_engine = TextSearchEngine(parsed_data[topic])
     closest_matching_text = search_engine.get_closest_matching_text(message)
@@ -45,7 +45,7 @@ def send_message():
     return jsonify({'status': 'ok', 'bot_response': bot_response})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5005)
+    app.run(host='0.0.0.0', port=5025)
 
 
 # 172.20.113.192
