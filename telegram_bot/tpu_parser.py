@@ -4,8 +4,9 @@ import re
 import os
 
 class LinkParser:
-    def __init__(self, file_path):
+    def __init__(self, file_path, add_path):
         self.file_path = file_path
+        self.add_path = add_path
 
     def read_links_from_file(self):
         links_dict = {}
@@ -48,7 +49,6 @@ class LinkParser:
                         topics_list+=[key]
                         key = None
                         value = ''
-        # Добавляем последний элемент
         if key is not None:
             data[key] = value.strip()
             topics_list+=[key]
@@ -64,7 +64,7 @@ class LinkParser:
 
     
     def add_additional_links(self, parsed_data, topics_list):
-        self.parse_all_files_in_directory('./data',parsed_data,topics_list)
+        self.parse_all_files_in_directory(self.add_path,parsed_data,topics_list)
     
     def parse_all_pages(self):
         parsed_data = {}
@@ -76,10 +76,13 @@ class LinkParser:
                 parsed_data[topic] = url + text
                 topics_list+=[topic]
         self.add_additional_links(parsed_data,topics_list)
+        # print(topics_list)
         return topics_list,parsed_data
 
+# file_path = 'staff.txt'  # путь к файлу с ссылками
+# add_path = './data'
+# link_parser = LinkParser(file_path,add_path)
+# topics_list,parsed_data = link_parser.parse_all_pages()
 
-# file_path = 'links.txt'  # путь к файлу с ссылками
-# link_parser = LinkParser(file_path)
-# all_text = link_parser.parse_all_pages()
-# print(all_text)
+# print(topics_list)
+# # print(parsed_data['Преподаватели'])

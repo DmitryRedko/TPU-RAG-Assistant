@@ -12,11 +12,11 @@ class TopicAssistant:
             model="deepseek-chat",
             messages=[
                 {"role": "system", 
-                 "content": f"""Из списка {self.topic_list} выбери наиболее близкий и верни без изменений и без кавычек. Только элемент списка, ничего больше. Если не соответствует ничему, возвращай 'Другое'. Отвечать на вопросы не нужно."""},
+                 "content": f"""Из списка {self.topic_list} выбери наиболее близкий и верни без изменений и без кавычек. Если не соответствует ничему, возвращай 'Другое'. Если видишь явное ФИО или просто фамилию, то отвечай 'ФИО: найденное фио'"""},
                 {"role": "user", "content": user_question},
         ],
             max_tokens=100,
-            temperature=0.7,
+            temperature=0.01,
             stream=False
         )
         answer = response.choices[0].message.content

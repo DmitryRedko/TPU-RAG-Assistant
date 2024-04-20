@@ -12,9 +12,7 @@
 Отчисление - https://tpu.ru/student/expulsion/
 Восстановление - https://tpu.ru/student/restoration/
 Общежития - https://tpu.ru/tpu-life/campus/
-Расписание - https://rasp.tpu.ru/
 Военная кафедра - https://tpu.ru/university/structure/department/view/?id=8434
-Спортивный комплекс - https://old.tpu.ru/university/structure/department/view?id=8785
 Бассейн - https://tpu.ru/tpu-life/swimming_pool/
 Контакты образовательных программ - https://abiturient.tpu.ru/contacts
 Реквизиты вуза - https://tpu.ru/university/contacts/
